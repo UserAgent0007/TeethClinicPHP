@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our doctors</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/style.css">
+  </head>
+  <body>
+    <header>
+      <section id="top" class="top-nav">
+        <div class="logo">
+          <img src="../imagies/логотип.jpg" alt="teeth dent" widt="40" height="40" />
+          <span class="logo_text">Teeth Dent</span>
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+        <ul class="menu">
+          <li class="hov_sp"><a href="../index.html">Головна</a></li>
+          <li class="hov_sp"><a href="about_us.html">Про нас</a></li>
+          <li class="hov_sp"><a href="news.html">Товари</a></li>
+          <li class="hov_sp"><a href="#open">Реєстрація</a></li>
+          <li class="hov_sp"><a class="active" href="doctors.html">Наші лікарі</a></li>
+          <li class="last_item hov_sp"><a href="#open-app">Запис до лікаря</a></li>
+        </ul>
+      </section>
+    </header>
+    <div id="open" class="modal no-scroll">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="closebtn">×</a>
+          <form class="form1" action="../index.html" class="form_">
+            <div class="name_surname">
+              <div class="name">
+                <label for="name">Ім'я:</label>
+                <p class="nomargin"><input id="name" type="text" placeholder="Ім'я" required="required"></p>
+              </div>
+              <div class="name">
+                <label for="surname">Прізвище: </label>
+                <p class="nomargin"><input id="surname" type="text" placeholder="Прізвище" required="required"></p>
+              </div>
+            </div>
+            <fieldset>
+              <legend>Пароль, телефон, email</legend>
+              <div>
+                <label for="passw">Пароль:</label>
+                <p class="nomargin"><input id="passw" type="password" placeholder="пароль" required="required" /></p>
+                <label for="telephone">Телефон:</label>
+                <p class="nomargin"> <input id="telephone" type="tel" placeholder="телефон" required="required" /></p>
+                <label for="email_">email:</label>
+                <p class="nomargin"> <input id="email_" type="email" placeholder="адреса" required="required"></p>
+              </div>
+            </fieldset>
+            <div class="radio">
+              <p>
+  
+                <input type="radio" name="sex" value="Чоловік" id="sex" required="required">
+                <label for="sex">Чоловік</label>
+              </p>
+              <p>
+                <input type="radio" name="sex" value="Жінка" id="sex" required="required">
+                <label for="sex">Жінка</label>
+              </p>
+            </div>
+            <!-- <p>Якими пристроями найчастіше користуєтеся</p>
+                      <label for="device">телефон</label>
+                      <input type="radio" name="device" value="телефон" id="device" required="required"><br><br>
+                      <label for="device">планшет</label>
+                      <input type="radio" name="device" value="планшет" id="device" required="required"><br><br> -->
+            <p><input type="submit" value="Надіслати"> </p>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <div id="open-app" class="modal no-scroll">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="closebtn">×</a>
+          <div class="align-cont">
+            <form class="make_appointment" action="../index.html" class="form_">
+              <p><label>Виберіть дату: <input type="date" required="required"></label></p>
+              <p><label for="doctors">Виберіть лікаря: </label>
+                <input type="text" required="required" id="doctors" placeholder="виберіть лікаря" list="doct">
+              </p>
+              <datalist id="doct">
+                <option value="Максим Олегович Рудик"></option>
+                <option value="Сидорчук Михайло Михайлович"></option>
+                <option value="Наружко Анна Сергіївна"></option>
+              </datalist>
+              <p><label for="problems">Виберіть послугу:</label>
+                <input type="text" required="required" id="problems" placeholder="виберіть проблему" list="prob">
+              </p>
+              <datalist id="prob">
+                <option value="Імплантація"></option>
+                <option value="Лікування"></option>
+                <option value="Видалення"></option>
+                <option value="Пломбування"></option>
+                <option value="Діагностика зубів"></option>
+                <option value="Відбілювання"></option>
+              </datalist>
+              <!-- Написати textarea для скарг -->
+              <p><label for="problem">Опишіть проблему:</label></p>
+              <textarea name="prob" id="problem" placeholder="опишіть проблему" required="required"></textarea>
+              <p><input type="submit" value="Записатися"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="container">
+      <h1 class="text-yellow center">Наші лікарі</h1>
+        <ul class="list_of_doct"> 
+          <li class="doctors hov">
+            <img
+              src="../imagies/Максим Олегович Рудик (фото лікаря).jpg"
+              alt="Максим Олегович Рудик"
+              
+            />
+            <p>
+              Неперевершена харизма та професіоналізм! Знає як зробити вініри і
+              коронки так, щоб ніхто і не здогадався, що білосніжна усмішка не від
+              природи, а від майстерних рук Максима Сергійовича. Відкритий і
+              комунікабельний. Зробить усе, щоб пацієнт посміхався на всі здорові 32
+              зуба.
+            </p>
+          </li>
+          <li class="doctors hov">
+            <img
+              src="../imagies/Наружко Анна Сергіївна (фото лікаря).jpg"
+              alt="Наружко Анна Сергіївна"
+             
+            />
+            <p>
+              Найпозитивніша Зубна Фея в світі! Займається вирівнюванням зубів та
+              створенням сяючої посмішки у дітей та дорослих. За рівними зубками
+              приходять і малюки, і їх батьки!
+            </p>
+          </li>
+          <li class="doctors hov">
+            <img
+              src="../imagies/Сидорчук Михайло Миколайович (фото лікаря).jpg"
+              alt="Сидорчук Михайло Миколайович"
+              
+            />
+            <p>
+              Найпозитивніший хірург у світі! Вміє забалакати малечу так, що зубки
+              видаляються непомітно і з радістю! А для дорослих пацієнтів-
+              філігранний майстер видалення «складних зубів» і постановки імплантів.
+              Щелепно-лицева хірургія будь якої складності!
+            </p>
+          </li>
+        </ul>
+      </div> 
+    </main>
+    <footer>
+      <div class="container foot">
+          <div class="important-information">
+            <section class="logo_and_paragraph">
+                <div class="logo">
+                  <img src="../imagies/логотип.jpg" alt="teeth dent" widt="40" height="40" />
+                  <span class="logo_text color">Teeth Dent</span>
+                </div>
+                <p>TeethDent – відоме ім’я в стоматології та порожнині рота в Україні</p>
+            </section>
+            
+            <section class="time_to_visit">
+              <div>
+                <p>Ласкаво просимо до нас</p>
+              </div>
+
+              <div class="time_and_question">
+                <h2>Хочеш відвідати нашу клініку?</h2>
+                
+                <div class="time">
+                  <p>Понеділок - П'ятниця</p>
+                  <p>9.00 - 20.00</p>
+                </div>
+              </div>
+
+            </section>
+
+            <section class="links">
+              
+              <p>Important links</p>
+              <ul>
+                  <li><i class="fa fa-facebook"></i><span>facebook</span></li>
+                  <li><i class="fa fa-twitter"></i><span>twitter</span></li>
+                  <li><i class="fa fa-telegram"></i><span>telegram</span></li>
+              </ul>
+              
+            </section>
+            
+            <address>
+              <p>Для уточнення інформації пишіть</p>
+              <a href="12345Ivan@gmail.com">Івану Івановичу</a>
+            </address>
+          </div>
+          
+      </div>
+      <p class="copyrights">© 2010-2024, Всі права захищені</p>
+    </footer>
+  </body>
+</html>

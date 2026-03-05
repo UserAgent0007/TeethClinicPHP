@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>News</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="../CSS/products.css">
+<link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="../CSS/add_css_to_button.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+<body>
+  <header>
+
+    <section id="top" class="top-nav">
+      <div class="logo">
+        <img src="../imagies/логотип.jpg" alt="teeth dent" widt="40" height="40" />
+        <span class="logo_text">Teeth Dent</span>
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+      <ul class="menu">
+        <li class="hov_sp"><a href="../index.html">Головна</a></li>
+        <li class="hov_sp"><a href="about_us.html">Про нас</a></li>
+        <li class="hov_sp"><a class="active" href="news.html">Товари</a></li>
+        <li class="hov_sp"><a href="#open">Реєстрація</a></li>
+        <li class="hov_sp"><a href="doctors.html">Наші лікарі</a></li>
+        <li class="last_item hov_sp"><a href="#open-app">Запис до лікаря</a></li>
+      </ul>
+    </section>
+  </header>
+
+  <!-- <div id="open" class="modal no-scroll">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="closebtn">×</a>
+          <form class="form1" action="../index.html" class="form_">
+            <div class="name_surname">
+              <div class="name">
+                <label for="name">Ім'я:</label>
+                <p class="nomargin"><input id="name" type="text" placeholder="Ім'я" required="required"></p>
+              </div>
+              <div class="name">
+                <label for="surname">Прізвище: </label>
+                <p class="nomargin"><input id="surname" type="text" placeholder="Прізвище" required="required"></p>
+              </div>
+            </div>
+            <fieldset>
+              <legend>Пароль, телефон, email</legend>
+              <div>
+                <label for="passw">Пароль:</label>
+                <p class="nomargin"><input id="passw" type="password" placeholder="пароль" required="required" /></p>
+                <label for="telephone">Телефон:</label>
+                <p class="nomargin"> <input id="telephone" type="tel" placeholder="телефон" required="required" /></p>
+                <label for="email_">email:</label>
+                <p class="nomargin"> <input id="email_" type="email" placeholder="адреса" required="required"></p>
+              </div>
+            </fieldset>
+            <div class="radio">
+              <p>
+  
+                <input type="radio" name="sex" value="Чоловік" id="sex" required="required">
+                <label for="sex">Чоловік</label>
+              </p>
+              <p>
+                <input type="radio" name="sex" value="Жінка" id="sex" required="required">
+                <label for="sex">Жінка</label>
+              </p>
+            </div>
+            
+            <p><input type="submit" value="Надіслати"> </p>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <div id="open-app" class="modal no-scroll">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="closebtn">×</a>
+          <div class="align-cont">
+            <form class="make_appointment" action="../index.html" class="form_">
+              <p><label>Виберіть дату: <input type="date" required="required"></label></p>
+              <p><label for="doctors">Виберіть лікаря: </label>
+                <input type="text" required="required" id="doctors" placeholder="виберіть лікаря" list="doct">
+              </p>
+              <datalist id="doct">
+                <option value="Максим Олегович Рудик"></option>
+                <option value="Сидорчук Михайло Михайлович"></option>
+                <option value="Наружко Анна Сергіївна"></option>
+              </datalist>
+              <p><label for="problems">Виберіть послугу:</label>
+                <input type="text" required="required" id="problems" placeholder="виберіть проблему" list="prob">
+              </p>
+              <datalist id="prob">
+                <option value="Імплантація"></option>
+                <option value="Лікування"></option>
+                <option value="Видалення"></option>
+                <option value="Пломбування"></option>
+                <option value="Діагностика зубів"></option>
+                <option value="Відбілювання"></option>
+              </datalist>
+              
+              <p><label for="problem">Опишіть проблему:</label></p>
+              <textarea name="prob" id="problem" placeholder="опишіть проблему" required="required"></textarea>
+              <p><input type="submit" value="Записатися"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="modal-window_js" id="modal1">
+    <div class="content_advert">
+      <div class="modal-cont">
+        <div class="close" id="close_btn">X</div>
+        <div class="user_choos">
+          <p>Вибери на головній сторінці послугу і отримай знижку для перших клієнтів</p>
+          <div class="buttons">
+            <button id="accept">Прийняти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="non-modal-window" id="no_modal">
+    <div class="header_non_m">
+      <img src="../imagies/логотип.jpg" width="40px" height="40px" alt="sub">
+    </div>
+
+    <div class="main_non_m">
+      Підпишіться щоб отримувати повідомлення з нашого сайту
+    </div>
+
+    <div class="footer_non_m">
+      <button id="sub">Підписатися</button>
+      <button id="no-sub">Не підписатися</button>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="search_section">
+      <h1 class="title_prod">Товари</h1>
+      <div class="filter">
+
+        <input id="search" type="range" min="0" max="100" value="100" oninput="show_with_filter(this.value)">
+        <span id="prices">100</span>
+
+      </div>
+    </section>
+
+
+
+    <button id="add_option" class="add_no_show" style="margin-bottom: 1em;">добавити продукт</button> 
+
+    <div class="modal-window_js" id="modal2">
+      <div class="content_advert">
+        <div class="modal-cont">
+          <div class="close show_" id="close_btn2">X</div>
+          <div class="user_choos">
+            <label>назва продукту</label>
+            <input type="text" id="name">
+            <label>опис</label>
+            <input type="text" id="description">
+            <label>посилання на картинку</label>
+            <input type="text" id="image">
+            <label>ціна</label>
+            <input type="number" id="price">
+            <button onclick="submitItem()">post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="stilized_cart" id="show_cart">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag"
+        viewBox="0 0 16 16">
+        <path
+          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+      </svg>
+    </button>
+
+    <div class="modal-window_js" id="modal3">
+      <div class="content_advert">
+        <div class="modal-cont auto-overf div-height">
+          <div class="close show_" id="close_btn2_1">X</div>
+
+          <div id="obj_in_cart">
+
+
+          </div>
+
+          <span id="sum_of_buy">Вся вартість 0 грн</span>
+
+          <canvas id="count_chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="items">
+
+    </div>
+
+  </main>
+  <footer>
+    <div class="container foot">
+      <div class="important-information">
+        <section class="logo_and_paragraph">
+          <div class="logo">
+            <img src="../imagies/логотип.jpg" alt="teeth dent" widt="40" height="40" />
+            <span class="logo_text color">Teeth Dent</span>
+          </div>
+          <p>TeethDent – відоме ім’я в стоматології та порожнині рота в Україні</p>
+        </section>
+
+        <section class="time_to_visit">
+          <div>
+            <p>Ласкаво просимо до нас</p>
+          </div>
+
+          <div class="time_and_question">
+            <h2>Хочеш відвідати нашу клініку?</h2>
+
+            <div class="time">
+              <p>Понеділок - П'ятниця</p>
+              <p>9.00 - 20.00</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="links">
+
+          <p>Important links</p>
+          <ul>
+            <li><i class="fa fa-facebook"></i><span>facebook</span></li>
+            <li><i class="fa fa-twitter"></i><span>twitter</span></li>
+            <li><i class="fa fa-telegram"></i><span>telegram</span></li>
+          </ul>
+
+        </section>
+
+        <address>
+          <p>Для уточнення інформації пишіть</p>
+          <a href="12345Ivan@gmail.com">Івану Івановичу</a>
+        </address>
+      </div>
+
+    </div>
+    <p class="copyrights">© 2010-2024, Всі права захищені</p>
+  </footer>
+  
+  <script src="../script/main.js"></script>
+  <script src="../script/show_button.js"></script>
+  
+</body>
+
+</html>

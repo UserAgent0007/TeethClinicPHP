@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Appointment</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+      </head>
+<body>
+    
+  <header>
+
+    <div class="container flex_between border">
+      <div class="logo">
+        <img src="../imagies/логотип.jpg" alt="teeth dent" widt="40" height="40" />
+        <span class="logo_text">Teeth Dent</span>
+      </div>
+      <nav class="navigation">
+        <ul class="nav_ul">
+          <li><a href="../index.html">Головна</a></li>
+          <li><a href="about_us.html">Про нас</a></li>
+          <li><a href="news.html">Товари</a></li>
+          <li><a href="registration.html">Реєстрація</a></li>
+          <li><a href="doctors.html">Наші лікарі</a></li>
+          <li class="last_item"><a class="active" href="appointment.html">Запис до лікаря</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+    
+    <main>
+      <div class="align-cont">
+      <form class="make_appointment" action="../index.html" class="form_">
+            <p><label>Виберіть дату: <input type="date" required="required"></label></p>
+            <p><label for="doctors">Виберіть лікаря: </label>
+            <input type="text" required="required" id="doctors" placeholder="виберіть лікаря" list="doct"></p>
+            <datalist id="doct">
+                <option value="Максим Олегович Рудик"></option>
+                <option value="Сидорчук Михайло Михайлович"></option>
+                <option value="Наружко Анна Сергіївна"></option>
+            </datalist>
+            <p><label for="problems">Виберіть послугу:</label>
+            <input type="text" required="required" id="problems" placeholder="виберіть проблему" list="prob"></p>
+            <datalist id="prob">
+                <option value="Імплантація"></option>
+                <option value="Лікування"></option>
+                <option value="Видалення"></option>
+                <option value="Пломбування"></option>
+                <option value="Діагностика зубів"></option>
+                <option value="Відбілювання"></option>
+            </datalist>
+            <!-- Написати textarea для скарг -->
+            <p><label for="problem">Опишіть проблему:</label></p>
+            <textarea name="prob" id="problem" placeholder="опишіть проблему" required="required"></textarea>
+            <p><input type="submit" value="Записатися" ></p>
+        </form>
+      </div>  
+    </main>
+    <footer>
+      <div class="container foot">
+        <div class="important-information">
+          <section class="logo_and_paragraph">
+            <div class="logo">
+              <img src="../imagies/логотип.jpg" alt="teeth dent" widt="40" height="40" />
+              <span class="logo_text color">Teeth Dent</span>
+            </div>
+            <p>TeethDent – відоме ім’я в стоматології та порожнині рота в Україні</p>
+          </section>
+  
+          <section class="time_to_visit">
+            <div>
+              <p>Ласкаво просимо до нас</p>
+            </div>
+  
+            <div class="time_and_question">
+              <h2>Хочеш відвідати нашу клініку?</h2>
+  
+              <div class="time">
+                <p>Понеділок - П'ятниця</p>
+                <p>9.00 - 20.00</p>
+              </div>
+            </div>
+  
+          </section>
+  
+          <section class="links">
+  
+            <p>Important links</p>
+            <ul>
+              <li><i class="fa fa-facebook"></i><span>facebook</span></li>
+              <li><i class="fa fa-twitter"></i><span>twitter</span></li>
+              <li><i class="fa fa-telegram"></i><span>telegram</span></li>
+            </ul>
+  
+          </section>
+  
+          <address>
+            <p>Для уточнення інформації пишіть</p>
+            <a href="12345Ivan@gmail.com">Івану Івановичу</a>
+          </address>
+        </div>
+  
+      </div>
+      <p class="copyrights">© 2010-2024, Всі права захищені</p>
+    </footer>
+</body>
+</html>
