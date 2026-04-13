@@ -4,16 +4,19 @@ session_start(); // ← у головному файлі, до будь-яког
 ?>
 <?php 
     require_once("./layout/header.php");
+    
     require_once("./views/registration.php");
+    require_once("./views/login.php");
 ?>
-  
+
 <?php
     if (isset($_GET["action"])){
-        $path = "views/" . $_GET["action"] . ".php";
 
-        if (file_exists($path) && $_GET["action"] != "registration"){
+        $path = "views/" . $_GET["action"] . ".php";
+   
+
+        if (file_exists($path) && $_GET["action"] != "registration" && $_GET["action"] != "login"){   
             
-        
             require_once($path);
         }
 

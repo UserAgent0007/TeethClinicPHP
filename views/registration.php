@@ -1,11 +1,15 @@
+
+  
 <?php 
+  require_once("db.php");
   $errors = [];
 
-  if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_GET['action'] ?? '') === 'registration'){
     $login = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     $password_repeat = $_POST['password_repeat'] ?? '';
+    $gender = $_POST['gender'] ?? null;
     
     // Валідація
     if (!preg_match('/^[a-zA-Zа-яА-ЯіІїЇєЄ0-9_-]{4,}$/', $login)) {
@@ -21,10 +25,36 @@
         $errors['password_repeat'] = "Паролі не збігаються.";
     }
 
+    // if (empty($errors)) {
+    //     // TODO: Зберегти користувача в БД
+    //     header('Location: index.php?action=registration_successful');
+    //     exit;
+    // }
+
     if (empty($errors)) {
-        // TODO: Зберегти користувача в БД
-        header('Location: index.php?action=registration_successful');
-        exit;
+      // перевірка існування
+      $stmt = mysqli_prepare($link, "SELECT id FROM users WHERE email = ? OR login = ?");
+      mysqli_stmt_bind_param($stmt, "ss", $email, $login);
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if (mysqli_fetch_assoc($result)) {
+          $errors['user_exists'] = "Користувач вже існує.";
+      } else {
+
+          $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+          $stmt = mysqli_prepare($link, "
+              INSERT INTO users (login, email, password, gender)
+              VALUES (?, ?, ?, ?)
+          ");
+
+          mysqli_stmt_bind_param($stmt, "ssss", $login, $email, $hashedPassword, $gender);
+          mysqli_stmt_execute($stmt);
+
+          header('Location: index.php?action=registration_successful');
+          exit;
+      }
     }
 
     // Зберегти помилки та дані в сесію
@@ -32,7 +62,7 @@
     $_SESSION['reg_old'] = ['name' => $login, 'email' => $email];
     header('Location: index.php?action=registration#open');
     exit;
-}
+  }
 
 // Отримати помилки з сесії
 $errors = $_SESSION['reg_errors'] ?? [];
@@ -82,12 +112,18 @@ unset($_SESSION['reg_errors'], $_SESSION['reg_old']);
               <fieldset>
                 <legend>Стать:</legend>
 
-                <input type="radio" id="male" name="gender" value="male" checked>
+                <input type="radio" id="male" name="gender" value="Man" checked>
                 <label for="male">Чоловіча</label>
 
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="female" name="gender" value="Woman">
                 <label for="female">Жіноча</label>
+                
               </fieldset>
+              <?php if (isset($errors['user_exists'])): ?>
+                  <div class="error-msg">
+                      <?php echo $errors['user_exists']; ?>
+                  </div>
+              <?php endif; ?>
           </div>
           
 

@@ -29,40 +29,22 @@
         <li class="hov_sp"><a class="active" href="index.php?action=main">Головна</a></li>
         <li class="hov_sp"><a href="index.php?action=about">Про нас</a></li>
         <!-- <li class="hov_sp"><a href="pages/news.html">Товари</a></li> -->
-        <li class="hov_sp"><a id = "reg" href="index.php?action=registration#open">Реєстрація</a></li>
+        
         <!-- <li class="hov_sp"><a href="pages/doctors.html">Наші лікарі</a></li> -->
         <!-- <li class="hov_sp"><a href="pages/products.html">Товари</a></li> -->
-        <li class="hov_sp"><a id = "log" href="#log_f">Логін</a></li>
+        
+        <?php if (empty($_SESSION['user_id'])): ?>
+            <li class="hov_sp"><a id = "log" href="index.php?action=login#log_f">Логін</a></li>
+            <li class="hov_sp"><a id = "reg" href="index.php?action=registration#open">Реєстрація</a></li>
+        <?php else: ?>
+            <li class="hov_sp"><a id = "reg" href="index.php?action=logout">Вийти</a></li>
+        <?php endif; ?>
         <li class="last_item hov_sp"><a id = "login" href="#open-app">Запис до лікаря</a></li>
       </ul>
     </section>
 
   </header>
 
-  <div id="log_f" class="modal no-scroll">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <a id = "reg_close" href="#" class="closebtn">×</a>
-        
-        
-
-          
-            <div>
-              <label for="name_log">Ім'я:</label>
-              <p class="nomargin"><input id="name_log" type="text" placeholder="Ім'я" required="required"></p>
-              <label for="passw_log">Пароль:</label>
-              <p class="nomargin"><input id="passw_log" type="password" placeholder="пароль" required="required" /></p>
-            </div>
-          
-
-          
-          <p><button type="submit" onclick="testFunction()" id = "complite_log">Логін</button> </p>
-
-        </form>
-        
-      </div>
-    </div>
-  </div>
 
   <div id="open-app" class="modal no-scroll">
     <div class="modal-dialog">
