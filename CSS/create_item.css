@@ -1,0 +1,91 @@
+/* * {
+            box-sizing: border-box;
+        } */
+
+        /* main {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        } */
+
+        .container_create {
+            width: 100%;
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .items_crete_ {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1f3b5b;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form_group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form_group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cfd6dd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus,
+        .form_group textarea:focus {
+            border-color: #2d89ef;
+        }
+
+        .form_group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px;
+            background: #2d89ef;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #1f6fca;
+        }
+
+        .errors {
+            background: #ffe3e3;
+            color: #a10000;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .success {
+            background: #e3f7e8;
+            color: #146c2e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+

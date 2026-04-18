@@ -23,7 +23,7 @@
 
               $_SESSION['user_id'] = $user['id'];
               $_SESSION['login'] = $user['login'];
-              $_SESSION['is_admin'] = $user['is_admin'];
+              $_SESSION['is_admin'] = $user['admin'];
 
               // Перенаправлення
               header("Location: index.php?action=login_successful");
@@ -44,11 +44,9 @@
       <div class="modal-content">
         <a id = "reg_close" href="#" class="closebtn">×</a>
         
-        
-
         <form method="POST" action="index.php?action=login">  
           <?php if (!empty($error)): ?>
-            <p style="color:red;"><?= $error ?></p>
+            <p style="color:red;"><?php echo $error; ?></p>
           <?php endif; ?>
             <div>
               <label for="name_log">Ім'я:</label>

@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="CSS/dopstyle.css">
+  <link rel="stylesheet" href="CSS/create_item.css">
+  <link rel="stylesheet" href="CSS/products.css">
   <!-- <link rel="stylesheet" href="../../CSS/style.css"> -->
 </head>
 
@@ -28,6 +30,7 @@
       <ul class="menu">
         <li class="hov_sp"><a class="active" href="index.php?action=main">Головна</a></li>
         <li class="hov_sp"><a href="index.php?action=about">Про нас</a></li>
+        <li><a href="index.php?action=items">Товари</a></li>
         <!-- <li class="hov_sp"><a href="pages/news.html">Товари</a></li> -->
         
         <!-- <li class="hov_sp"><a href="pages/doctors.html">Наші лікарі</a></li> -->
@@ -37,6 +40,7 @@
             <li class="hov_sp"><a id = "log" href="index.php?action=login#log_f">Логін</a></li>
             <li class="hov_sp"><a id = "reg" href="index.php?action=registration#open">Реєстрація</a></li>
         <?php else: ?>
+            <li class="hov_sp"><a href="index.php?action=create_item">Додати товар</a></li>
             <li class="hov_sp"><a id = "reg" href="index.php?action=logout">Вийти</a></li>
         <?php endif; ?>
         <li class="last_item hov_sp"><a id = "login" href="#open-app">Запис до лікаря</a></li>
