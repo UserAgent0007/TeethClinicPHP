@@ -35,7 +35,7 @@
         
         <!-- <li class="hov_sp"><a href="pages/doctors.html">Наші лікарі</a></li> -->
         <!-- <li class="hov_sp"><a href="pages/products.html">Товари</a></li> -->
-        
+        <li class="hov_sp"><a href="index.php?action=articles">Статті</a></li>
         <?php if (empty($_SESSION['user_id'])): ?>
             <li class="hov_sp"><a id = "log" href="index.php?action=login#log_f">Логін</a></li>
             <li class="hov_sp"><a id = "reg" href="index.php?action=registration#open">Реєстрація</a></li>

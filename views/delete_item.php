@@ -1,6 +1,10 @@
 <?php
     require_once("db.php");
 
+    if (empty($_SESSION['user_id']) || empty($_SESSION['is_admin']) || (int)$_SESSION['is_admin'] !== 1) {
+        die('Доступ заборонено. Ця сторінка доступна лише адміністратору.');
+    }
+
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
         die('Такої сторінки не існує.');
     }
@@ -11,7 +15,7 @@
     $result = mysqli_query($link, $sql);
 
     if (!$result) {
-        die('Помилка запиту: ' . mysqli_error($conn));
+        die('Помилка запиту: ' . mysqli_error($link));
     }
 
     if (mysqli_num_rows($result) === 0) {

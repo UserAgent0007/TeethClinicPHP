@@ -15,7 +15,7 @@
     $result = mysqli_query($link, $sql);
 
     if (!$result) {
-        die('Помилка запиту: ' . mysqli_error($conn));
+        die('Помилка запиту: ' . mysqli_error($link));
     }
 
     if (mysqli_num_rows($result) === 0) {
